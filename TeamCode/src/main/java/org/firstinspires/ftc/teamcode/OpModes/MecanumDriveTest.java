@@ -39,7 +39,7 @@ public class MecanumDriveTest extends OpMode {
         LBMotor = hardwareMap.get(DcMotor.class, "left_back_drive");
         telemetry.addData("Hardware: ", "Initialized");
 
-        //RFMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+        RFMotor.setDirection(DcMotorSimple.Direction.REVERSE);
         RBMotor.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 
