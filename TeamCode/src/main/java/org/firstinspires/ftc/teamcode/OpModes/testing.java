@@ -32,7 +32,7 @@ public class testing extends OpMode {
             servo.setPosition(0);
         } else if (gamepad1.x || gamepad1.b) {
             // move to 90 degrees.
-            telemetry.addData("Key", "bx");
+            telemetry.addData("Key", "x");
             servo.setPosition(0.5);
         } else if (gamepad1.a) {
             // move to 180 degrees.
@@ -40,4 +40,6 @@ public class testing extends OpMode {
             servo.setPosition(1);
         }
     }
+
+
 }

@@ -6,9 +6,9 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @TeleOp
-public class MecanumDriveTest extends OpMode {
+public class MainOpMode extends OpMode {
+    Arm arm;
     DcMotor RFMotor;
-
     DcMotor LFMotor;
     DcMotor RBMotor;
     DcMotor LBMotor;
@@ -42,10 +42,15 @@ public class MecanumDriveTest extends OpMode {
 
         RFMotor.setDirection(DcMotorSimple.Direction.REVERSE);
         RBMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+
+        arm = new Arm(this);
     }
 
     @Override
     public void loop() {
         moveDriveTrain();
+        arm.update();
     }
+
+
 }
