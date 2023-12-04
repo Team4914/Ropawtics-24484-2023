@@ -17,7 +17,7 @@ public class Launcher {
     }
     public void update() {
         if (opMode.gamepad1.y) {
-            launchServo.setPosition(0);
+            launchServo.setPosition(0.1);
         }
         else if (opMode.gamepad1.b) {
             launchServo.setPosition(1);

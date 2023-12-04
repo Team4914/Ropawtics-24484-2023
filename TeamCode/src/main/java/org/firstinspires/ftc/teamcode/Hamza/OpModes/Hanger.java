@@ -5,8 +5,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 public class Hanger {
-    public static double HANG_SERVO_DOWN = 0.6;
-    public static double HANG_SERVO_UP = 1;
+    public static double HANG_SERVO_DOWN = 0.1;
+    public static double HANG_SERVO_UP = 0.6;
 
 
     OpMode opmode;
@@ -27,18 +27,22 @@ public class Hanger {
     private void updateServo() {
         if (opmode.gamepad1.dpad_left) {
             liftServo.setPosition(HANG_SERVO_DOWN);
+            opmode.telemetry.addData("Num", HANG_SERVO_DOWN);
         }
         else if (opmode.gamepad1.dpad_right) {
             liftServo.setPosition(HANG_SERVO_UP);
+            opmode.telemetry.addData("Num", HANG_SERVO_UP);
         }
     }
 
     private void updateMotor() {
         if (opmode.gamepad1.dpad_up) {
             hangMotor.setPower(1);
+
         }
         else if (opmode.gamepad1.dpad_down) {
             hangMotor.setPower(-1);
+            opmode.telemetry.addData("Num", -1);
         }
         else {
             hangMotor.setPower(0);
