@@ -25,6 +25,8 @@ public class ObjectDetector {
     private static final String[] LABELS = {
             "Cube1",
     };
+    private static String PROP_POSITION = "";
+    private static boolean propDetected = false;
 
     /**
      * The variable to store our instance of the TensorFlow Object Detection processor.
@@ -130,15 +132,16 @@ public class ObjectDetector {
      * Add telemetry about TensorFlow Object Detection (TFOD) recognitions.
      */
     private void telemetryTfod() {
-
-        List<Recognition> currentRecognitions = tfod.getRecognitions();
+        if(propDetected)
+            return;
+        List<Recognition> currentRecognitions = getRecognitions();
         opMode.telemetry.addData("# Objects Detected", currentRecognitions.size());
 
         // Step through the list of recognitions and display info for each one.
         for (Recognition recognition : currentRecognitions) {
             double x = (recognition.getLeft() + recognition.getRight()) / 2 ;
             double y = (recognition.getTop()  + recognition.getBottom()) / 2 ;
-
+            decidePosition(x,y, recognition.getConfidence());
             opMode.telemetry.addData(""," ");
             opMode.telemetry.addData("Image", "%s (%.0f %% Conf.)", recognition.getLabel(), recognition.getConfidence() * 100);
             opMode.telemetry.addData("- Position", "%.0f / %.0f", x, y);
@@ -149,7 +152,15 @@ public class ObjectDetector {
         opMode.telemetry.update();
 
     }   // end method telemetryTfod()
-
+    private void decidePosition(double x, double y, double confidence){
+        if(x <= 320)
+            PROP_POSITION = "LEFT";
+        else if (x > 320 && confidence > 0.5)
+            PROP_POSITION = "CENTER";
+        else
+            PROP_POSITION = "RIGHT";
+        propDetected = true;
+    }
     public void close() {
         visionPortal.close();
     }
