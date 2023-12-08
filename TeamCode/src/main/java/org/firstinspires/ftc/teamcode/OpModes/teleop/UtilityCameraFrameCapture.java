@@ -31,7 +31,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package org.firstinspires.ftc.teamcode.Hamza.OpModes;
+package org.firstinspires.ftc.teamcode.OpModes.teleop;
 
 import android.util.Size;
 

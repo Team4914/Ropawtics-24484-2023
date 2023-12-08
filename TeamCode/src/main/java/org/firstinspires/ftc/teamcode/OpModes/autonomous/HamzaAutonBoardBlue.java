@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Hamza.OpModes;
+package org.firstinspires.ftc.teamcode.OpModes.autonomous;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @Autonomous
-public class HamzaAutonBoardRed extends LinearOpMode{
+public class HamzaAutonBoardBlue extends LinearOpMode{
     DcMotor RFMotor;
     DcMotor LFMotor;
     DcMotor RBMotor;
@@ -30,10 +30,10 @@ public class HamzaAutonBoardRed extends LinearOpMode{
         telemetry.addData("Auto: ", "Initialized");
 
         waitForStart();
-        RFMotor.setPower(-1);
-        RBMotor.setPower(1);
-        LFMotor.setPower(1);
-        LBMotor.setPower(-1);
+        RFMotor.setPower(1);
+        RBMotor.setPower(-1);
+        LFMotor.setPower(-1);
+        LBMotor.setPower(1);
         Thread.sleep(1500);
         resetMotors();
     }

@@ -1,10 +1,10 @@
-package org.firstinspires.ftc.teamcode.Hamza.OpModes;
+package org.firstinspires.ftc.teamcode.OpModes.teleop;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-// Shared Import
-import org.firstinspires.ftc.teamcode.shared.*;
+// Parts Import
+import org.firstinspires.ftc.teamcode.parts.*;
 @TeleOp
 public class HamzaOpMode extends OpMode {
     MecanumDrive mecanumDrive;
