@@ -10,7 +10,7 @@ public class Arm {
     //final static double WRIST_CLOSED = 0.2;
     final static double WRIST_SPEED = 0.005;
     final static double CLAW_OPEN = 0.4;
-    final static double CLAW_CLOSED = 0.8;
+    final static double CLAW_CLOSED = 1;
 
     OpMode opMode;
 

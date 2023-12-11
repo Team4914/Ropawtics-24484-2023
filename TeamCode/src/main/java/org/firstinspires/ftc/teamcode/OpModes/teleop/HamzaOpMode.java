@@ -17,7 +17,7 @@ public class HamzaOpMode extends OpMode {
     @Override
     public void init() {
         mecanumDrive = new MecanumDrive(this);
-        //arm = new Arm(this);
+        arm = new Arm(this);
         hanger = new Hanger(this);
         //roller = new Roller(this);
         launcher = new Launcher(this);
@@ -32,7 +32,7 @@ public class HamzaOpMode extends OpMode {
     @Override
     public void loop() {
         mecanumDrive.update();
-        //arm.update();
+        arm.update();
         hanger.update();
         launcher.update();
 
