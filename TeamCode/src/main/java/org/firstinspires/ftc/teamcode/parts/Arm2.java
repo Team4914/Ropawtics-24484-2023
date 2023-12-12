@@ -34,7 +34,7 @@ public class Arm2 {
 
     // To be called at the start of the game to put the arm in game position
     public void initialize() throws InterruptedException {
-        final int ELBOW_TIME = 3000;
+        final int ELBOW_TIME = 3001;
         final double WRIST_DOWN = 1;
         final double CLAW_DOWN = 0.2;
 

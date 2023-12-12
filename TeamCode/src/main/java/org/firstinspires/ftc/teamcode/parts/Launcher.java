@@ -9,6 +9,7 @@ public class Launcher {
     OpMode opMode;
 
     Servo launchServo;
+    int launchPosition = 0;
 
     public Launcher(OpMode opMode) {
         this.opMode = opMode;
@@ -16,11 +17,13 @@ public class Launcher {
         launchServo = opMode.hardwareMap.get(Servo.class, "launchServo");
     }
     public void update() {
-        if (opMode.gamepad1.y) {
-            launchServo.setPosition(0.1);
+        if (opMode.gamepad1.a) {
+            launchPosition = (launchPosition + 1) % 2;
+            if (launchPosition == 0)
+                launchServo.setPosition(0.4);
+            else
+                launchServo.setPosition(0.9);
         }
-        else if (opMode.gamepad1.b) {
-            launchServo.setPosition(1);
-        }
+        opMode.telemetry.addData("LaunchPos", launchPosition);
     }
 }
