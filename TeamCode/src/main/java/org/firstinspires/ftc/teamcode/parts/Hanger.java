@@ -5,8 +5,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 public class Hanger {
-    public static double HANG_SERVO_DOWN = 0.01;
-    public static double HANG_SERVO_UP = 0.5;
+    public static double HANG_SERVO_DOWN = 0.05;
+    public static double HANG_SERVO_UP = 0.55;
 
     double liftServoPos = 0;
 

@@ -10,7 +10,7 @@ public class Arm {
     //final static double WRIST_CLOSED = 0.2;
     final static double WRIST_SPEED = 0.005;
     final static double CLAW_OPEN = 0.4;
-    final static double CLAW_CLOSED = 1;
+    final static double CLAW_CLOSED = 0.7;
 
     OpMode opMode;
 
@@ -42,7 +42,7 @@ public class Arm {
         elbowMotorPower += opMode.gamepad1.right_trigger;
 
         elbowMotorLeft.setPower(elbowMotorPower);
-        elbowMotorRight.setPower(opMode.gamepad1.left_stick_y);
+        elbowMotorRight.setPower(elbowMotorPower);
 
         opMode.telemetry.addData("Elbow Power: ", elbowMotorPower);
 
