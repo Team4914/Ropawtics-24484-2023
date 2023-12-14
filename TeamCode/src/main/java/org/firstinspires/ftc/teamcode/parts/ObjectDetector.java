@@ -25,7 +25,7 @@ public class ObjectDetector {
     private static final String[] LABELS = {
             "Cube1",
     };
-    private static String PROP_POSITION = "";
+    private static String PROP_POSITION = null;
     private static boolean propDetected = false;
 
     /**
@@ -160,6 +160,10 @@ public class ObjectDetector {
         else
             PROP_POSITION = "RIGHT";
         propDetected = true;
+    }
+
+    public static String getPropPosition(){
+        return PROP_POSITION;
     }
     public void close() {
         visionPortal.close();
